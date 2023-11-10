@@ -13,7 +13,7 @@ export class EmailController {
 
     private configureRouter(): void {
         this.router = Router();
-        this.router.post('/', async (req: Request, res: Response, next: NextFunction) => {
+        this.router.post('/', (req: Request, res: Response, next: NextFunction) => {
             this.emailService
                 .sendByEmail(req.body)
                 .then((data: string) => {
